@@ -1,12 +1,7 @@
 import sys
 
-# Check if an argument was provided
-if len(sys.argv) < 2:
-    print("Usage: python hello.py <number_of_terms>")
-    sys.exit(1)
-
-# Get number of terms from the first argument
-n_terms = int(sys.argv[1])
+# Try to get input from arguments; default to 10 if none
+n_terms = int(sys.argv[1]) if len(sys.argv) > 1 else 10
 
 a, b = 0, 1
 count = 0
