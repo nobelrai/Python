@@ -1,21 +1,18 @@
-# Simple Fibonacci series generator
+import sys
 
-# Number of terms you want
-n_terms = int(input("How many terms? "))
+# Check if an argument was provided
+if len(sys.argv) < 2:
+    print("Usage: python hello.py <number_of_terms>")
+    sys.exit(1)
 
-# First two terms
+# Get number of terms from the first argument
+n_terms = int(sys.argv[1])
+
 a, b = 0, 1
 count = 0
 
-# Check if the number of terms is valid
-if n_terms <= 0:
-    print("Please enter a positive number.")
-elif n_terms == 1:
-    print("Fibonacci sequence:")
+print("Fibonacci sequence:")
+while count < n_terms:
     print(a)
-else:
-    print("Fibonacci sequence:")
-    while count < n_terms:
-        print(a)
-        a, b = b, a + b
-        count += 1
+    a, b = b, a + b
+    count += 1
